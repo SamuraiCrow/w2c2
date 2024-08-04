@@ -54,7 +54,7 @@ endif
 .PHONY: clean
 
 TARGET_OBJECTS = $(patsubst %.c,%.o,$(filter-out %_test.c test.c,$(wildcard *.c)))
-TEST_OBJECTS = $(patsubst %.c,%.o,$(filter-out main.c,$(wildcard *.c)))
+TEST_OBJECTS = $(patsubst %.c,%.o,$(wildcard *.c))
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
